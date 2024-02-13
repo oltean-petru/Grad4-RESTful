@@ -1,6 +1,6 @@
 import express from 'express';
 import ping from './ping.js';
-import users from './users.js';
+// import users from './users.js';
 import comments from './comments.js';
 
 const router = express.Router();
@@ -18,10 +18,10 @@ router.get('/users', async (req, res) => {
 });
 
 
-// api/v1/ping 
+// api/v1/ping
 router.use('/ping', ping);
-router.use('/auth', auth);
-router.use('/users', users);
+// router.use('/users', users);
+router.use('/comment', comments);
 
 
 export default router;
