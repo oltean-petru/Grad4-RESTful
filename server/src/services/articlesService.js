@@ -23,7 +23,7 @@ const exposeServices = {
 
   oneArticleController: async ({ id: _id }) => {
     try {
-      const oneArticle = await articleModel.findById({ id })
+      const oneArticle = await articleModel.findOne({ _id })
       if (!oneArticle) return res.sendStatus(404)
       return oneArticle
     } catch (error) {
