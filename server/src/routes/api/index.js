@@ -19,7 +19,7 @@ router.use('/ping', ping);
 router.use('/users', users);
 router.use('/comments', comments);
 router.use('/categories', categories);
-router.use('/articles', articles);
+router.use('/creations', articles);
 router.use('/auth', auth)
 
 
