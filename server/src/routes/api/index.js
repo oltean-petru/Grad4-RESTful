@@ -1,45 +1,27 @@
 import express from 'express';
 import ping from './ping.js';
-import usersService from '#src/services/usersService'
-import categoryService from '#src/services/categoryService'
+import auth from './auth.js';
+import users from './users.js';
 
 const router = express.Router();
 
+// api/v1/
 router.get('/', (req, res) => {
   res.json({
     message: 'API/V1',
   });
 });
-
-/**
-* USERS
-*/
+// api/v1/users/
 router.get('/users', async (req, res) => {
   const allU = await usersService.findAllUsers()
   res.json(allU);
 });
 
-router.post('/users', async (req, res) => {
-  const user = req.body
-  const newUser = await usersService.createUser(user)
-  res.json(newUser);
-});
 
-/**
- * CATEGORY
- */
-
-router.get('/categories', async (req, res) => {
-  const allC = await categoryService.findAllCategories()
-  res.json(allC);
-});
-
-router.post('/categories', async (req, res) => {
-  const category = req.body
-  const newCategory = await categoryService.createCategory(category)
-  res.json(newCategory);
-});
-
+// api/v1/ping 
 router.use('/ping', ping);
+router.use('/auth', auth);
+router.use('/users', users);
+
 
 export default router;
