@@ -23,6 +23,4 @@ const exposeServices = {
 
 }
 
-
-
 export default exposeServices
