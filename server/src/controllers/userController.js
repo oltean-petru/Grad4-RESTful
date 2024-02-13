@@ -1,4 +1,4 @@
-import usersServices from '#src/services/usersServices';
+import usersServices from '#src/services/usersService';
 
 const exposeController = {
     allUserController: async (req, res) => {
