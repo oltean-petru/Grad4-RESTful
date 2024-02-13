@@ -2,16 +2,16 @@ import userModel from "#src/models/Users";
 
 const exposeServices = {
 
-    findAllUsers: async ()=>{
+    findAllUsers: async () => {
         try {
-            const   allUsers = await userModel.find({})
-            return  allUsers
+            const allUsers = await userModel.find({})
+            return allUsers
         } catch (error) {
             throw error(error)
         }
     },
 
-    createUser: async (user)=>{
+    createUser: async (user) => {
         try {
             const newUser = await userModel.create(user)
             return newUser
