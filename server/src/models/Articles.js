@@ -4,13 +4,14 @@ const { Schema } = mongoose;
 const articleSchema = new Schema({
     imgUri: String,
     prompt: String,
-    categories: { type: Array },
-    comments : { type: Schema.Types.Mixed },
-    user : { type: Schema.Types.ObjectId, ref: 'users' },
-    publicationDate : { type: Date, default: Date.now },
-    aiEngine: { type: Number, default: 0 },
-});
+    categories: Array,
+    comments: { type: Schema.Types.Mixed },
+    user: { type: Schema.Types.ObjectId, ref: 'users' },
+    aiEngine: String,
+},
+    { timestamps: true }
+);
 
-const articleModel = mongoose.model('articles',articleSchema)
+const articleModel = mongoose.model('articles', articleSchema)
 
 export default articleModel
