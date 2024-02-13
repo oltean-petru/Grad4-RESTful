@@ -1,17 +1,17 @@
 import express from 'express';
-import articles from '#src/services/articlesService';
+import articleController from '#src/controllers/articleController';
 
 const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  const allArticles = articles.findAllArticles()
+  const allArticles = articleController.allArticleController()
   res.json(allArticles);
 });
 
 router.post('/', (req, res) => {
   const article = req.body
-  const newArticle = articles.createArticle(article)
+  const newArticle = articleController.createArticle(article)
   res.json(newArticle);
 });
 
