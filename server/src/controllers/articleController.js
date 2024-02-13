@@ -19,7 +19,7 @@ const exposeController = {
     oneArticleController: async (req, res) => {
         const { id } = req.params
         try {
-            const oneArticle = await articleService.oneArticleService(id)
+            const oneArticle = await articleService.oneArticleService({id})
             return res.json(oneArticle)
         } catch (error) {
             return res.sendStatus(400)
