@@ -4,6 +4,7 @@ import users from './users.js';
 import comments from './comments.js';
 import categories from './categories.js';
 import articles from './articles.js';
+import auth from './auth.js'
 
 const router = express.Router();
 
@@ -19,6 +20,7 @@ router.use('/users', users);
 router.use('/comments', comments);
 router.use('/categories', categories);
 router.use('/articles', articles);
+router.use('/auth', auth)
 
 
 export default router;

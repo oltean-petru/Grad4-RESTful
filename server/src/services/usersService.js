@@ -29,7 +29,6 @@ const exposeServices = {
       throw new Error(error)
     }
   }
-
 }
 
 
