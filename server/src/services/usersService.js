@@ -18,7 +18,7 @@ const exposeServices = {
     } catch (error) {
       throw error(error)
     }
-  }
+  },
 }
 
 export default exposeServices

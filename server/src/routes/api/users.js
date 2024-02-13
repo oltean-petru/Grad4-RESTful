@@ -1,17 +1,10 @@
 import express from 'express';
-import usersService from '#src/services/usersService';
+import userController from '#src/controllers/userController';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  const allU = await usersService.findAllUsers()
-  res.json(allU);
-});
+router.get('/', userController.allUserController);
 
-router.post('/', async (req, res) => {
-  const user = req.body
-  const newUser = await usersService.createUser(user)
-  res.json(newUser);
-});
+router.post('/', userController.createUserController);
 
 export default router;
