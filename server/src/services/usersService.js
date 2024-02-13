@@ -9,6 +9,15 @@ const exposeServices = {
         } catch (error) {
             throw error(error)
         }
+    },
+
+    createUser: async (user)=>{
+        try {
+            const newUser = await userModel.create(user)
+            return newUser
+        } catch (error) {
+            throw error(error)
+        }
     }
 
 

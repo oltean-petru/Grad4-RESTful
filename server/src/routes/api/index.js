@@ -15,6 +15,12 @@ router.get('/users', async (req, res) => {
   res.json(allU);
 });
 
+router.post('/users', async (req, res) => {
+  const user = req.body
+  const newUser = await usersService.createUser(user)
+  res.json(newUser);
+});
+
 
 
 router.use('/ping', ping);
