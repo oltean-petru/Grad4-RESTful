@@ -4,9 +4,9 @@ const { Schema } = mongoose;
 const articleSchema = new Schema({
     imgUri: String,
     prompt: String,
-    categories: Array,
-    comments: { type: Schema.Types.Mixed },
-    user: { type: Schema.Types.ObjectId, ref: 'users' },
+    categories: [Schema.Types.Mixed],
+    comments: [Schema.Types.Mixed],
+    user: Schema.Types.Mixed,
     aiEngine: String,
 },
     { timestamps: true }
