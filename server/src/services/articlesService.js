@@ -14,7 +14,28 @@ const exposeServices = {
   createArticle: async (article) => {
     try {
       const newArticle = await articleModel.create(article)
+      if (!newArticle) return res.sendStatus(400)
       return newArticle
+    } catch (error) {
+      throw error(error)
+    }
+  },
+
+  oneArticleController: async ({ id: _id }) => {
+    try {
+      const oneArticle = await articleModel.findById({ id })
+      if (!oneArticle) return res.sendStatus(404)
+      return oneArticle
+    } catch (error) {
+      throw error(error)
+    }
+  },
+
+  updateArticle: async (id, article) => {
+    try {
+      const updatedArticle = await articleModel.findByIdAndUpdate(id, article)
+      if (!updatedArticle) return res.sendStatus(400)
+      return updatedArticle
     } catch (error) {
       throw error(error)
     }
