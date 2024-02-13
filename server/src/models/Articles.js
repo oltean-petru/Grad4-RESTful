@@ -5,7 +5,7 @@ const articleSchema = new Schema({
     imgUri: String,
     prompt: String,
     categories: { type: Array },
-    comments : { type: Array, },
+    comments : { type: Schema.Types.Mixed },
     user : { type: Schema.Types.ObjectId, ref: 'users' },
     publicationDate : { type: Date, default: Date.now },
     aiEngine: { type: Number, default: 0 },
