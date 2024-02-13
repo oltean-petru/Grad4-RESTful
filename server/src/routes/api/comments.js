@@ -1,6 +1,6 @@
 import express from 'express';
-
 import commentsService from '#src/services/commentsService';
+
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -13,6 +13,5 @@ router.post('/', async (req, res) => {
   const newComment = await commentsService.createComment(comment)
   res.json(newComment);
 });
-
 
 export default router;
