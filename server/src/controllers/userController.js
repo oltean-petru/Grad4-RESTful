@@ -2,7 +2,7 @@ import usersService from '#src/services/usersService';
 
 const exposeController = {
     allUserController: async (req, res) => {
-        const allUsers = await usersServices.findAllUsers();
+        const allUsers = await usersService.findAllUsers();
         return res.json(allUsers)
     },
 
