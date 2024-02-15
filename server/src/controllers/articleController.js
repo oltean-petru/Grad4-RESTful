@@ -35,6 +35,17 @@ const exposeController = {
         } catch (error) {
             return res.sendStatus(400)
         }
+    },
+
+    updateArticlePatch: async (req, res) => {
+        const { id } = req.params
+        const { body } = req
+        try {
+            const updatedArticle = await articleService.updateArticlePatch(id, body)
+            return res.json(updatedArticle)
+        } catch (error) {
+            return res.sendStatus(400)
+        }
     }
 }
 

@@ -39,6 +39,16 @@ const exposeServices = {
     } catch (error) {
       throw error(error)
     }
+  },
+
+  updateArticlePatch: async (id, article) => {
+    try {
+      const updatedArticle = await articleModel.findOneAndUpdate({ _id: id }, article, { new: true })
+      if (!updatedArticle) return res.sendStatus(400)
+      return updatedArticle
+    } catch (error) {
+      throw error(error)
+    }
   }
 }
 

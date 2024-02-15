@@ -8,5 +8,6 @@ router.get('/', articleController.allArticleController);
 router.get('/:id', articleController.oneArticleController);
 router.post('/', articleController.createArticle);
 router.put('/:id', articleController.updateArticle);
+router.patch('/:id', articleController.updateArticlePatch);
 
 export default router;
