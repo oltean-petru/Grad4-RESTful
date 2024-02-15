@@ -21,7 +21,7 @@ const exposeServices = {
     }
   },
 
-  oneArticleController: async ({ id: _id }) => {
+  oneArticleService: async ({ id: _id }) => {
     try {
       const oneArticle = await articleModel.findOne({ _id })
       if (!oneArticle) return res.sendStatus(404)
