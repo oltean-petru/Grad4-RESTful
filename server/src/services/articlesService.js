@@ -33,7 +33,7 @@ const exposeServices = {
 
   updateArticle: async (id, article) => {
     try {
-      const updatedArticle = await articleModel.findByIdAndUpdate(id, article)
+      const updatedArticle = await articleModel.findByIdAndUpdate(id, article, { new: true })
       if (!updatedArticle) return res.sendStatus(400)
       return updatedArticle
     } catch (error) {
@@ -43,7 +43,7 @@ const exposeServices = {
 
   updateArticlePatch: async (id, article) => {
     try {
-      const updatedArticle = await articleModel.findOneAndUpdate({ _id: id }, article, { new: true })
+      const updatedArticle = await articleModel.findOneAndUpdate({ _id: id }, article)
       if (!updatedArticle) return res.sendStatus(400)
       return updatedArticle
     } catch (error) {
